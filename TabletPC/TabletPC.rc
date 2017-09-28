@@ -1,0 +1,109 @@
+
+#include <windows.h>
+#include <winres.h>
+
+#include "resource.h"
+#include "signaturePadModelIds.h"
+
+VS_VERSION_INFO VERSIONINFO
+
+ FILEVERSION 2,0,0,1
+ PRODUCTVERSION 2,0,0,1
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "InnoVisioNate\0"
+            VALUE "FileDescription", "CursiVision\0"
+            VALUE "FileVersion", "3, 0, 1, 0\0"
+            VALUE "InternalName", "CursiVisionTabletPC.ocx\0"
+            VALUE "LegalCopyright", "Copyright © 2009,2010,2011 InnoVisioNate Inc.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CursiVisionTabletPC.ocx\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "CursiVision\0"
+            VALUE "ProductVersion", "3.0.1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+IDD_PAD_PROPERTIES DIALOGEX 0, 0, 256, 256 + 14
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+
+   LTEXT "Press Ink to set the width and color of lines",-1,10, 8, 256 - 32, 12
+
+   PUSHBUTTON "Ink",IDDI_INK_PROPERTIES_SET,10,8 + 14,32,14
+
+#define ROLLUP  110
+
+   LTEXT "Choose your active signature pad", IDDI_PAD_MODEL_CHOICE_LABEL1,                            10, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12, 128 + 64 + 32, 12
+
+   AUTORADIOBUTTON "Wacom LCD",                                      IDDI_PAD_MODEL_WACOM_LCD,        16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 , 256, 12
+   AUTORADIOBUTTON "Scriptel ST1500",                                IDDI_PAD_MODEL_SCRIPTEL,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14, 256, 12
+   AUTORADIOBUTTON "signotec signature pads",                        IDDI_PAD_MODEL_SIGNOTEC,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14, 256, 12
+   AUTORADIOBUTTON "The InnoVisioNate Phablet signature pad",        IDDI_PAD_MODEL_PHABLET,          16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14, 256, 12
+   AUTORADIOBUTTON "Windows Tablet PC OS",                           IDDI_PAD_MODEL_TABLETPC,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14, 256, 12
+
+   LTEXT "",IDDI_PAD_MODEL_CHOICE_LABEL2,  10,                                                            -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14,128 + 64 + 32, 156
+
+   LTEXT "",IDDI_PAD_MODEL_CHOICE_NONADMIN,10,                                                            -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14 + 14, 128 + 64 + 32, 128
+
+#ifdef EVALUATION_BUILD
+   LTEXT "",IDDI_PAD_MODEL_CHOICE_EVAL_BUILD,10,                                                          -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14, 128 + 64 + 32, 128
+#endif
+
+END
+
+IDD_PAD_INK_PROPERTIES DIALOGEX 0, 0, 128 + 64, 64
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_POPUP | WS_VISIBLE | WS_BORDER
+CAPTION "Ink"
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+
+   LTEXT "Please choose the weight and color of the ink.",IDC_STATIC, 8, 8, 128 + 64 - 16, 14
+
+   LTEXT "Weight:",-1,8,8 + 14 + 4, 24, 12
+   EDITTEXT IDDI_INK_PROPERTIES_WEIGHT,8 + 24 + 2, 8 + 14, 24, 14, ES_CENTER | ES_NUMBER
+
+   LTEXT "Color:",-1,8 + 24 + 2 + 24 + 8 + 16,8 + 14 + 4, 24, 12
+   EDITTEXT IDDI_INK_PROPERTIES_COLOR_SWATCH,8 + 24 + 2 + 24 + 8 + 16 + 24,8 + 14, 20, 14,WS_VISIBLE | WS_EX_CLIENTEDGE
+
+   PUSHBUTTON "...",IDDI_INK_PROPERTIES_COLOR_CHOOSE,8 + 24 + 2 + 24 + 8 + 16 + 24 + 2 + 16 + 4,8 + 14 , 20, 14
+
+   PUSHBUTTON "Ok", IDDI_INK_PROPERTIES_OK, 4, 32 + 12, 32, 14,WS_TABSTOP
+   PUSHBUTTON "Cancel", IDDI_INK_PROPERTIES_CANCEL, 4 + 32 + 4, 32 + 12, 32, 14,WS_TABSTOP
+
+END
+
+1 TYPELIB "SignaturePad.tlb"
+
+STRINGTABLE {
+
+IDDI_PAD_MODEL_CHOICE_LABEL2 "Note: When you change the active signature pad and re-sign documents signed with a different pad \
+you should choose ""Forget"" on the signing control panel to re-specify the location to sign.\n\
+If you change the pad, any other settings made above will not be saved."
+
+IDDI_PAD_MODEL_CHOICE_NONADMIN "Changing the Signature pad requires administrative privileges.\nPlease run CursiVision \
+""As Administrator"" to change the signature pad."
+
+IDDI_PAD_MODEL_CHOICE_EVAL_BUILD "Retail CursiVision supports all of the above pads, however, \r\
+the components to use them are not provided with the Evaluation version."
+
+}

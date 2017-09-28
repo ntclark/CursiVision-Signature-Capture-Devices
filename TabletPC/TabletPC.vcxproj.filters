@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5b770184-8e41-4027-a54f-6e6d1b6e76c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Implementation">
+      <UniqueIdentifier>{f6b7a70c-801c-4b83-93ee-21b74fa7f4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Interfaces">
+      <UniqueIdentifier>{8495fa22-d85d-4cdc-953b-a35893bec2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Interfaces\COM Events">
+      <UniqueIdentifier>{5a748f6c-340a-4a8f-8565-2fa03d3b4768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6ce7f845-9afa-45ac-b77a-26ab31828adb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{9e39331a-7966-45a4-ba1a-2fe4198aa743}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="handlers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="settingsHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TabletPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tabletPCData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllMain.cpp">
+      <Filter>Source Files\COM Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="IOleClentSite.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IOleInPlaceFrame.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IOleInPlaceObject.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IOleInPlaceSite.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IOleObject.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IPropertiesClient.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IPropertyPageClient.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="ISignaturePad.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IUnknown.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IConnectionPoint.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IConnectionPointContainer.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEnumConnectionPoints.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEnumerateConnections.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IInkCollectorEvents.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\source\utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\..\Common\source\SignaturePad.odl">
+      <Filter>Source Files\COM Implementation</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\include\signaturePadModelIds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TabletPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TabletPC.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="TabletPC.def">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
