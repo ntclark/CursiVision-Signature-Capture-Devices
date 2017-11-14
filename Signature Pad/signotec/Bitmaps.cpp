@@ -1,10 +1,10 @@
 
 #include "SignaturePad.h"
 
-   void SignaturePad::DisplaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   void SignaturePad::DisplaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
 #if 1
 
-   Bitmap *pBitmap = Bitmap::FromHBITMAP(hBitmap,NULL);
+   Bitmap *pBitmap = Bitmap::FromHBITMAP((HBITMAP)hBitmap,NULL);
    Bitmap *pMonochromeBitmap = pBitmap -> Clone(0,0,cx,cy,PixelFormat8bppIndexed);//PixelFormat4bppIndexed);//PixelFormat1bppIndexed);//PixelFormat8bppIndexed);
    HBITMAP hBitmapMonochrome = NULL;
    pMonochromeBitmap -> GetHBITMAP(Color(0,0,0),&hBitmapMonochrome);
@@ -31,7 +31,7 @@
    }
 
 
-   void SignaturePad::OverlaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   void SignaturePad::OverlaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
    return;
    }
 

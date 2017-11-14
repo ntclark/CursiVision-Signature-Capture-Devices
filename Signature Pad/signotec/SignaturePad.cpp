@@ -276,7 +276,7 @@
    }
 
 
-   void SignaturePad::DisplayHotSpotHandle(HBITMAP hBitmap,HDC hdc,long eventId,long x,long y,long cx,long cy) {
+   void SignaturePad::DisplayHotSpotHandle(UINT_PTR hBitmap,HDC hdc,long eventId,long x,long y,long cx,long cy) {
 
    hotSpot *ph = new hotSpot();
 

@@ -259,7 +259,7 @@
    }
 
 
-   void TabletPC::DisplayHotSpotHandle(HBITMAP hBitmap,HDC hdc,long eventId,long x,long y,long cx,long cy) {
+   void TabletPC::DisplayHotSpotHandle(UINT_PTR hBitmap,HDC hdc,long eventId,long x,long y,long cx,long cy) {
    return;
    }
 
@@ -284,12 +284,12 @@
    }
 
 
-   void TabletPC::DisplaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   void TabletPC::DisplaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
    return;
    }
 
 
-   void TabletPC::OverlaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   void TabletPC::OverlaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
    return;
    }
 

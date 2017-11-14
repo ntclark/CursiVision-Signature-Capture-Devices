@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scriptel ST1500", "Scriptel
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "signotecCV", "Signature Pad\signotec\signotec.vcxproj", "{B233D8FB-0F43-42EB-8FF5-40B0A7C6CC96}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PadKillerAPI", "..\PadKiller\PadKillerAPI\PadKillerAPI.vcxproj", "{5B290941-78FF-44D6-B8F8-98ED355D4318}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -87,6 +89,22 @@ Global
 		{B233D8FB-0F43-42EB-8FF5-40B0A7C6CC96}.VisioLogger Release|Win32.Build.0 = Release|Win32
 		{B233D8FB-0F43-42EB-8FF5-40B0A7C6CC96}.VisioLogger Release|x64.ActiveCfg = Release|Win32
 		{B233D8FB-0F43-42EB-8FF5-40B0A7C6CC96}.VisioLogger Release|x64.Build.0 = Release|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Debug|Win32.Build.0 = Debug|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Debug|x64.ActiveCfg = Debug|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Debug|x64.Build.0 = Debug|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Release|Win32.ActiveCfg = Release|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Release|Win32.Build.0 = Release|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Release|x64.ActiveCfg = Release|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.Release|x64.Build.0 = Release|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Debug|Win32.ActiveCfg = VisioLogger Debug|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Debug|Win32.Build.0 = VisioLogger Debug|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Debug|x64.ActiveCfg = VisioLogger Debug|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Debug|x64.Build.0 = VisioLogger Debug|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Release|Win32.ActiveCfg = VisioLogger Release|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Release|Win32.Build.0 = VisioLogger Release|Win32
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Release|x64.ActiveCfg = VisioLogger Release|x64
+		{5B290941-78FF-44D6-B8F8-98ED355D4318}.VisioLogger Release|x64.Build.0 = VisioLogger Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -140,10 +140,7 @@
       <OutputFile>.\Debug/TabletPC.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)"  "%25ProgramFiles%25\InnoVisioNate\CursiVision"
-regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
-
-</Command>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -199,10 +196,7 @@ regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
       <OutputFile>.\Debug/TabletPC.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)"  "%25ProgramFiles%25\InnoVisioNate\CursiVision"
-regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
-
-</Command>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -250,10 +244,7 @@ regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
       <OutputFile>$(OutDir)TabletPC.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)"  "%25ProgramFiles%25\InnoVisioNate\CursiVision"
-regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
-
-</Command>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -302,10 +293,7 @@ regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
       <OutputFile>$(OutDir)TabletPC.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)"  "%25ProgramFiles%25\InnoVisioNate\CursiVision"
-regsvr32 /s /c "%25ProgramFiles%25\InnoVisioNate\CursiVision\$(TargetFileName)"
-
-</Command>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
