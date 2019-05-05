@@ -181,7 +181,6 @@
                  OLEMISC_INSIDEOUT |
                  OLEMISC_SETCLIENTSITEFIRST |
                  OLEMISC_CANTLINKINSIDE );
-//sprintf(szTemp,"%ld",131473L);
       RegSetValueEx(keyHandle,NULL,0,REG_SZ,(BYTE *)szTemp,(DWORD)strlen(szTemp));
   
    RegCreateKeyEx(HKEY_CLASSES_ROOT,OBJECT_NAME,0,NULL,REG_OPTION_NON_VOLATILE,KEY_ALL_ACCESS,NULL,&keyHandle,&disposition);

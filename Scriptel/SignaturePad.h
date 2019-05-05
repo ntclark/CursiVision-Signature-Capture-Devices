@@ -247,7 +247,7 @@ class SignaturePad : public ISignaturePad {
 
         void fire_PenUp(long x,long y);
         void fire_PenDown(long x,long y);
-        void fire_PenPoint(long x,long y);
+        void fire_PenPoint(long x,long y,float inkWeight);
         void fire_OptionSelected(long optionNumber);
 
      private:

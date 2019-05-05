@@ -64,9 +64,9 @@
    rgsabound[0].cElements = 2 * *pCntPages;
    SafeArrayRedim(*pSize,rgsabound);
 
-   BSTR bstrName = SysAllocStringLen(NULL,strlen(pParent -> signatureDeviceProductName) + 1);
+   BSTR bstrName = SysAllocStringLen(NULL,(DWORD)strlen(pParent -> signatureDeviceProductName) + 1);
 
-   MultiByteToWideChar(CP_ACP,0,pParent -> signatureDeviceProductName,-1,bstrName,strlen(pParent -> signatureDeviceProductName) + 1);
+   MultiByteToWideChar(CP_ACP,0,pParent -> signatureDeviceProductName,-1,bstrName,(DWORD)strlen(pParent -> signatureDeviceProductName) + 1);
 
    index = 0;
    index++; SafeArrayPutElement(*thePageNames,&index,bstrName);
@@ -184,7 +184,7 @@
    pPropSheetPages[0].pszTemplate = MAKEINTRESOURCE(IDD_PAD_PROPERTIES);
    pPropSheetPages[0].pfnDlgProc = (DLGPROC)TabletPC::settingsHandler;
    pPropSheetPages[0].pszTitle = pParent -> signatureDeviceProductName;
-   pPropSheetPages[0].lParam = (long)pParent;
+   pPropSheetPages[0].lParam = (UINT_PTR)pParent;
    pPropSheetPages[0].pfnCallback = NULL;
 
    return S_OK;

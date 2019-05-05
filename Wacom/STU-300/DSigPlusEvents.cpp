@@ -31,7 +31,7 @@
    long x = (long)((double)thePen.x * pThis -> scaleToPadX);
    long y = (long)((double)thePen.y * pThis -> scaleToPadY);
 
-   pThis -> connectionPointContainer.fire_PenPoint(x,y);
+   pThis -> connectionPointContainer.fire_PenPoint(x,y,0.0f);
 
 #else
 
@@ -80,12 +80,12 @@
 
    if ( thePen.sw > 0 ) {
       lastWasMove = false;
-      pThis -> connectionPointContainer.fire_PenPoint(thePen.x,thePen.y);
+      pThis -> connectionPointContainer.fire_PenPoint(thePen.x,thePen.y,0.0f);
    }
 
    if ( 0 == thePen.press ) {
       if ( ! lastWasMove )
-         pThis -> connectionPointContainer.fire_PenPoint(0,0);
+         pThis -> connectionPointContainer.fire_PenPoint(0,0,0.0f);
       lastWasMove = true;
    }
 

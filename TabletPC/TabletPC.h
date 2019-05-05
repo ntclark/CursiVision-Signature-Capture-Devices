@@ -381,7 +381,7 @@ class __declspec(dllexport) TabletPC : public ISignaturePad {
 
         void fire_PenUp();
         void fire_PenDown();
-        void fire_PenPoint(long x,long y);
+        void fire_PenPoint(long x,long y,float inkWeight);
         void fire_OptionSelected(long optionNumber);
 
      private:

@@ -54,7 +54,7 @@
             penDown = true;
          }
 
-         pThis -> connectionPointContainer.fire_PenPoint(0,0);
+         pThis -> connectionPointContainer.fire_PenPoint(0,0,0.0f);
 
          oldTipSwitch = tipSwitch;
 
@@ -69,9 +69,9 @@
       }
 
       if ( x > upperRightX && y < upperRightY )
-         pThis -> connectionPointContainer.fire_PenPoint(0,0);
+         pThis -> connectionPointContainer.fire_PenPoint(0,0,0.0f);
       else
-         pThis -> connectionPointContainer.fire_PenPoint(x,y);
+         pThis -> connectionPointContainer.fire_PenPoint(x,y,0.0f);
 
    }
 

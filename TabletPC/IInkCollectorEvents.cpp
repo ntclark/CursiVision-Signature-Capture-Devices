@@ -153,7 +153,7 @@
    long strokeId = strokeCount - 1;
 
    if ( oldStrokeNumber != strokeId )
-      pParent -> connectionPointContainer.fire_PenPoint(0,0);
+      pParent -> connectionPointContainer.fire_PenPoint(0,0,0.0f);
 
    long n = 0;
    SAFEARRAY *pValues = (SAFEARRAY *)((VARIANT *)pPacketData -> byref) -> parray;
@@ -170,7 +170,7 @@
 
       pParent -> pIInkRenderer -> InkSpaceToPixel((LONG_PTR)pParent -> hdcClient,&pX,&pY);
 
-      pParent -> connectionPointContainer.fire_PenPoint(pX,pY);
+      pParent -> connectionPointContainer.fire_PenPoint(pX,pY,0.0f);
 
    }
 
@@ -189,11 +189,11 @@
    long strokeId = strokeCount - 1;
 
    if ( oldStrokeNumber != strokeId ) 
-      pParent -> connectionPointContainer.fire_PenPoint(0,0);
+      pParent -> connectionPointContainer.fire_PenPoint(0,0,0.0f);
 
    oldStrokeNumber = strokeId;
 
-   pParent -> connectionPointContainer.fire_PenPoint(pX,pY);
+   pParent -> connectionPointContainer.fire_PenPoint(pX,pY,0.0f);
 
    return S_OK;
    }

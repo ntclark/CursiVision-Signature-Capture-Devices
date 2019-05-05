@@ -80,7 +80,7 @@
    }
 
 
-   void TabletPC::_IConnectionPointContainer::fire_PenPoint(long x,long y) {
+   void TabletPC::_IConnectionPointContainer::fire_PenPoint(long x,long y,float inkWeight) {
    IEnumConnections* pIEnum;
    CONNECTDATA connectData;
    pParent -> connectionPoint.EnumConnections(&pIEnum);
@@ -88,7 +88,7 @@
    while ( 1 ) {
       if ( pIEnum -> Next(1, &connectData, NULL) ) break;
       ISignaturePadEvents * pClient = reinterpret_cast<ISignaturePadEvents *>(connectData.pUnk);
-      pClient -> PenPoint(x,y);
+      pClient -> PenPoint(x,y,inkWeight);
    }
    static_cast<IUnknown*>(pIEnum) -> Release();
    return;

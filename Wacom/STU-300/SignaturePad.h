@@ -88,11 +88,11 @@ class SignaturePad : public ISignaturePad {
       void __stdcall PrepareForPage(RECT *pRect);
 
       void __stdcall DisplaySignatureBitmapFile(char *pszImageFile,BOOL populatePad = FALSE,BOOL isLastPage = TRUE);
-      void __stdcall DisplaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy);
-      void __stdcall OverlaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy);
+      void __stdcall DisplaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy);
+      void __stdcall OverlaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy);
 
       void __stdcall DisplayHotSpotFile(char *pszFile,long eventID,long x,long y,long cx,long cy);
-      void __stdcall DisplayHotSpotHandle(HBITMAP hBitmap,HDC hdc,long eventID,long x,long y,long cx,long cy);
+      void __stdcall DisplayHotSpotHandle(UINT_PTR hBitmap,HDC hdc,long eventID,long x,long y,long cx,long cy);
       void __stdcall DisplayOk(long eventID);
       void __stdcall DisplayClear(long eventID);
       void __stdcall DisplayCancel(long eventID);
@@ -252,7 +252,7 @@ class SignaturePad : public ISignaturePad {
 
         void fire_PenUp();
         void fire_PenDown();
-        void fire_PenPoint(long x,long y);
+        void fire_PenPoint(long x,long y,float inkWeight);
         void fire_OptionSelected(long optionNumber);
 
      private:

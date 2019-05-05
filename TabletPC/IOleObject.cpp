@@ -61,7 +61,7 @@
    if ( dwDrawAspect != DVASPECT_CONTENT ) return S_OK;
    SIZEL tempSizel;
    RECT rect = {0,0,0,0};
-   hiMetricToPixel(pSizel,&tempSizel);
+   hiMetricToPixels(pSizel,&tempSizel);
    rect.right = tempSizel.cx;
    rect.bottom = tempSizel.cy;
    SetWindowPos(pParent -> hwndSigPlusFrame,HWND_TOP,rect.left,rect.top,rect.right - rect.left,rect.bottom - rect.top,0L);
@@ -76,7 +76,7 @@
    GetWindowRect(pParent -> hwndSigPlusFrame,&rcParent);
    pSizel -> cx = rcParent.right - rcParent.left;
    pSizel -> cy = rcParent.bottom - rcParent.top;
-   pixelToHiMetric(pSizel,pSizel);
+   pixelsToHiMetric(pSizel,pSizel);
    return S_OK;
    }
  

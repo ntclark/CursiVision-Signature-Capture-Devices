@@ -146,6 +146,12 @@
     <PostBuildEvent>
       <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\Supporting\$(Platform)\STUTabletCore.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\libeay32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+rem copy "$(ProjectDir)..\..\Supporting\$(Platform)\msvcr71.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\zlib1.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <CustomBuildStep>
@@ -206,6 +212,12 @@
     <PostBuildEvent>
       <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\Supporting\$(Platform)\STUTabletCore.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\libeay32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+rem copy "$(ProjectDir)..\..\Supporting\$(Platform)\msvcr71.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\zlib1.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <CustomBuildStep>
@@ -257,6 +269,12 @@
     <PostBuildEvent>
       <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\Supporting\$(Platform)\STUTabletCore.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\libeay32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+rem copy "$(ProjectDir)..\..\Supporting\$(Platform)\msvcr71.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\zlib1.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <CustomBuildStep>
@@ -309,6 +327,12 @@
     <PostBuildEvent>
       <Command>regsvr32 /s /c "$(TargetPath)"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\Supporting\$(Platform)\STUTabletCore.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\libeay32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+rem copy "$(ProjectDir)..\..\Supporting\$(Platform)\msvcr71.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)..\..\Supporting\$(Platform)\zlib1.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bitmaps.cpp" />

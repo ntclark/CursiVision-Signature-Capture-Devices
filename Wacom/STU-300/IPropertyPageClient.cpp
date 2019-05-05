@@ -186,7 +186,7 @@
    pPropSheetPages[0].pszTitle = pParent -> signatureDeviceProductName;
    if ( ! pParent -> signatureDeviceProductName[0] )
       pPropSheetPages[0].pszTitle = "Pad Disconnected?";
-   pPropSheetPages[0].lParam = (long)pParent;
+   pPropSheetPages[0].lParam = (ULONG_PTR)pParent;
    pPropSheetPages[0].pfnCallback = NULL;
 
    return S_OK;

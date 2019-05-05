@@ -1,8 +1,8 @@
 
 #include "SignaturePad.h"
 
-   void SignaturePad::DisplaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
-   loadBitmapFromHandle(x,y,cx,cy,cx,cy,hBitmap);
+   void SignaturePad::DisplaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   loadBitmapFromHandle(x,y,cx,cy,cx,cy,(HBITMAP)hBitmap);
    sendBitmapHandle(hBitmapPad);
    return;
    }
@@ -16,7 +16,7 @@
    }
 
 
-   void SignaturePad::OverlaySignatureBitmapHandle(HBITMAP hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   void SignaturePad::OverlaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
    return;
    }
 
@@ -36,7 +36,7 @@
 
    GetObject(hBitmap,sizeof(BITMAP),&bitMap);
 
-   bitMap.bmBitsPixel = displayBitsPerPixel;
+   bitMap.bmBitsPixel = (short)displayBitsPerPixel;
 
    long colorCount = bitMap.bmPlanes * bitMap.bmBitsPixel;
 
