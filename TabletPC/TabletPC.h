@@ -91,7 +91,7 @@ class __declspec(dllexport) TabletPC : public ISignaturePad {
 
       char * __stdcall DeviceName() { return signatureDeviceName; };
       char * __stdcall DeviceModel() { return signatureDeviceModel; };
-      char * __stdcall DeviceProductName() { return signatureDeviceProductName; };
+      char * __stdcall DeviceProductName() { return STR_TABLETPC_MODEL; };
       long __stdcall IsLCD() { return 0L; };
       long __stdcall IsFullPage() { return 1L; };
       long __stdcall HasScaling() { return 0L; };

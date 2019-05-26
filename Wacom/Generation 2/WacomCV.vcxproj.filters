@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a526d6dd-bcd4-42f0-be6b-319141eac9a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Implementation">
+      <UniqueIdentifier>{d72b0c51-5d3e-4878-87a7-64e69f72e651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Interfaces">
+      <UniqueIdentifier>{d80a759e-9624-48c3-b8d3-ae5d13acc2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM Interfaces\COM Events">
+      <UniqueIdentifier>{1d654da4-65e3-4226-a307-d6593aa189a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4648255e-4de8-42bc-a71a-c2f30aaf2203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{81a1e340-cb0c-47ce-a7a1-251a645ffde3}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Wgss STU">
+      <UniqueIdentifier>{671de054-3956-4214-8246-1943ebd68488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wgss STU\OpenSSL">
+      <UniqueIdentifier>{0ffc7436-f55c-4a05-af22-0053472418bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wgss STU\OpenSSL\utility">
+      <UniqueIdentifier>{6660dc38-717a-42e3-9680-4578772a1ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wgss STU\Win32">
+      <UniqueIdentifier>{f6c2d4d6-7dde-4f3e-8bd0-6bb2e180f0d7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bitmaps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loaded.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="settingsHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="signatureData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SignaturePad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllMain.cpp">
+      <Filter>Source Files\COM Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="IPropertiesClient.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IPropertyPageClient.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="ISignaturePad.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IUnknown.cpp">
+      <Filter>Source Files\COM Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="IConnectionPoint.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IConnectionPointContainer.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEnumConnectionPoints.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEnumerateConnections.cpp">
+      <Filter>Source Files\COM Interfaces\COM Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Tablet.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\getUsbDevices.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Interface.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\InterfaceImpl.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\InterfaceQueue.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Protocol.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\ProtocolHelper.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\utility\cpp\Win32\enumDevices.cpp">
+      <Filter>Source Files\Wgss STU\OpenSSL\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\utility\cpp\Win32\enumUsbDevices.cpp">
+      <Filter>Source Files\Wgss STU\OpenSSL\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\utility\cpp\Win32\setThreadName.cpp">
+      <Filter>Source Files\Wgss STU\OpenSSL\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Win32\getUsbDevices_Win32.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\error_CONFIGRET.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\error_win32api.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\wstringConvert.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Win32\UsbInterface.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\winusb.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\error_NTSTATUS.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\getDevicePowerState.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="signatureActivityMonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\ReportHandler.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\msvc.cpp">
+      <Filter>Source Files\Wgss STU\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\STU\cpp\Win32\ProtocolHelper_Win32_Gdiplus.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+    <ClCompile Include="Wacom STU SDK\cpp\src\Win32\cpp\errror_Gdiplus.cpp">
+      <Filter>Source Files\Wgss STU</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SignaturePad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SignaturePad.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="SignaturePad.def">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\..\..\Common\source\SignaturePad.odl">
+      <Filter>Source Files\COM Implementation</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

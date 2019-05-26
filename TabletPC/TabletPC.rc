@@ -50,22 +50,17 @@ BEGIN
 
    PUSHBUTTON "Ink",IDDI_INK_PROPERTIES_SET,10,8 + 14,32,14
 
-#define ROLLUP  110
+#define ROLLUP  60
 
-   LTEXT "Choose your active signature pad", IDDI_PAD_MODEL_CHOICE_LABEL1,                            10, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12, 128 + 64 + 32, 12
+#include "changePadRadioButtons.rc"
 
-   AUTORADIOBUTTON "Wacom LCD",                                      IDDI_PAD_MODEL_WACOM_LCD,        16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 , 256, 12
-   AUTORADIOBUTTON "Scriptel ST1500",                                IDDI_PAD_MODEL_SCRIPTEL,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14, 256, 12
-   AUTORADIOBUTTON "signotec signature pads",                        IDDI_PAD_MODEL_SIGNOTEC,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14, 256, 12
-   AUTORADIOBUTTON "The InnoVisioNate Phablet signature pad",        IDDI_PAD_MODEL_PHABLET,          16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14, 256, 12
-   AUTORADIOBUTTON "Windows Tablet PC OS",                           IDDI_PAD_MODEL_TABLETPC,         16, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14, 256, 12
+   LTEXT "",IDDI_PAD_MODEL_CHOICE_NONADMIN,10,ROLLUP + 112, 256, 32
 
-   LTEXT "",IDDI_PAD_MODEL_CHOICE_LABEL2,  10,                                                            -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14,128 + 64 + 32, 156
-
-   LTEXT "",IDDI_PAD_MODEL_CHOICE_NONADMIN,10,                                                            -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14 + 14, 128 + 64 + 32, 128
+#undef ROLLUP
+#define ROLLUP 48
 
 #ifdef EVALUATION_BUILD
-   LTEXT "",IDDI_PAD_MODEL_CHOICE_EVAL_BUILD,10,                                                          -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14, 128 + 64 + 32, 128
+   LTEXT "",IDDI_PAD_MODEL_CHOICE_EVAL_BUILD,10, -ROLLUP + 16 + 14 + 12 + 8 + 24 + 64 + 12 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14 + 14, 128 + 64 + 32, 128
 #endif
 
 END

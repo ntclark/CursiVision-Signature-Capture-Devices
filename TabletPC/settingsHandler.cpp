@@ -27,9 +27,8 @@
 }
 
    long entryPadSelection = -1L;
-                                
-   char szFeatureDescriptions[][64] = {"The InnoVisioNate Phablet signature Pad","Wacom LCD","signotec Signature pads","Scriptel ST1500","Windows Tablet PC OS"};
-   wchar_t wszFiles[][64] = {L"pkAPI.ocx",L"WacomCV.ocx",L"signotecCV.ocx",L"ScriptelST1500.ocx",L"TabletPC.ocx"};
+
+   PAD_IMPLEMENTATION_FILES
 
    extern "C" void disableAll(HWND hwnd,long *pExceptions);
    extern "C" void enableAll(HWND hwnd,long *pExceptions);
@@ -57,7 +56,7 @@
       for ( long k = IDDI_PAD_MODEL_MIN; k <= IDDI_PAD_MODEL_MAX; k++ ) {
          char szModel[128];
          GetWindowText(GetDlgItem(hwnd,k),szModel,128);
-         if ( strstr(szModel,p -> signatureDeviceProductName) ) {
+         if ( strstr(szModel,p -> DeviceProductName()) ) {
             SendMessage(GetDlgItem(hwnd,k),BM_SETCHECK,BST_CHECKED,0L);
             entryPadSelection = k;
             break;
@@ -122,7 +121,7 @@
          break;
 
       case IDDI_INK_PROPERTIES_SET:
-         DialogBoxParam(hModule,MAKEINTRESOURCE(IDD_PAD_INK_PROPERTIES),hwnd,(DLGPROC)TabletPC::inkHandler,(long)p);
+         DialogBoxParam(hModule,MAKEINTRESOURCE(IDD_PAD_INK_PROPERTIES),hwnd,(DLGPROC)TabletPC::inkHandler,(ULONG_PTR)p);
          break;
 
       default:
@@ -158,7 +157,7 @@
 
             bool saveProperties = false;
             for ( long k = IDDI_PAD_MODEL_MIN; k <= IDDI_PAD_MODEL_MAX; k++ ) {
-               long isSelected = SendMessage(GetDlgItem(hwnd,k),BM_GETCHECK,0L,0L);
+               long isSelected = (long)SendMessage(GetDlgItem(hwnd,k),BM_GETCHECK,0L,0L);
                if ( isSelected ) {
                   if ( entryPadSelection == k ) {
                      saveProperties = true;
@@ -177,7 +176,7 @@
             p -> pIGProperties -> Discard();
 
             for ( long k = IDDI_PAD_MODEL_MIN; k <= IDDI_PAD_MODEL_MAX; k++ ) {
-               long isSelected = SendMessage(GetDlgItem(hwnd,k),BM_GETCHECK,0L,0L);
+               long isSelected = (long)SendMessage(GetDlgItem(hwnd,k),BM_GETCHECK,0L,0L);
                if ( isSelected ) {
                   if ( entryPadSelection == k )
                      break;
@@ -208,9 +207,9 @@
          NMTTDISPINFO *pNotify = (NMTTDISPINFO *)lParam;
          long k = 0L;
          if ( pNotify->uFlags & TTF_IDISHWND )
-            k = SendMessage((HWND)pNotify -> hdr.idFrom,TBM_GETPOS,0L,0L);
+            k = (long)SendMessage((HWND)pNotify -> hdr.idFrom,TBM_GETPOS,0L,0L);
          else
-            k = SendDlgItemMessage(hwnd,pNotify -> hdr.idFrom,TBM_GETPOS,0L,0L);
+            k = (long)SendDlgItemMessage(hwnd,(int)pNotify -> hdr.idFrom,TBM_GETPOS,0L,0L);
          }
          return (LRESULT)0;
 
@@ -265,7 +264,7 @@
 
       RECT rcAdjust;
       memcpy(&rcAdjust,&rcWeight,sizeof(RECT));
-      AdjustWindowRect(&rcAdjust,GetWindowLongPtr(hwnd,GWL_STYLE),FALSE);
+      AdjustWindowRect(&rcAdjust,(DWORD)GetWindowLongPtr(hwnd,GWL_STYLE),FALSE);
 
       dx = dx - (rcAdjust.right - rcAdjust.left);
       dy = dy - (rcAdjust.bottom - rcAdjust.top);
@@ -368,9 +367,8 @@
       HFONT hGUIFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
       SelectObject(ps.hdc,hGUIFont);
       SetTextColor(ps.hdc,RGB(255,0,0));
-      SetBkColor(ps.hdc,GetSysColor(COLOR_WINDOW));
-      FillRect(ps.hdc,&ps.rcPaint,(HBRUSH)(COLOR_WINDOW + 1));
-      DrawText(ps.hdc,szText,strlen(szText),&ps.rcPaint,DT_TOP);
+      SetBkColor(ps.hdc,GetSysColor(COLOR_MENU));
+      DrawText(ps.hdc,szText,(DWORD)strlen(szText),&ps.rcPaint,DT_TOP);
       EndPaint(hwnd,&ps);
       }
       break;
@@ -399,7 +397,7 @@
 
    BOOL CALLBACK doDisable(HWND hwndTest,LPARAM lParam) {
    long *pExceptions = (long *)lParam;
-   long id = GetWindowLongPtr(hwndTest,GWL_ID);
+   long id = (long)GetWindowLongPtr(hwndTest,GWL_ID);
    for ( long k = 0; 1; k++ ) {
       if ( ! pExceptions[k] )
          break;
@@ -415,7 +413,7 @@
 
    BOOL CALLBACK doEnable(HWND hwndTest,LPARAM lParam) {
    long *pExceptions = (long *)lParam;
-   long id = GetWindowLongPtr(hwndTest,GWL_ID);
+   long id = (long)GetWindowLongPtr(hwndTest,GWL_ID);
    for ( long k = 0; 1; k++ ) {
       if ( ! pExceptions[k] )
          break;
