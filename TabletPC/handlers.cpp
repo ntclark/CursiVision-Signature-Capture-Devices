@@ -16,7 +16,7 @@
 
    case WM_SIZE: {
 
-      HRESULT rc = DefWindowProc(hwnd,msg,wParam,lParam);
+      LRESULT rc = DefWindowProc(hwnd,msg,wParam,lParam);
 
       GetWindowRect(hwnd,&p -> rectDisplay);
 

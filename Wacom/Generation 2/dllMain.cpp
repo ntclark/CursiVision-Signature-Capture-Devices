@@ -10,11 +10,16 @@
 
 #include "SignaturePad_i.h"
 //
-//NTC:L 05-22-2019: Just out of the fucking blue, MS Visual Studio is somehow including the SignaturePad_i.c file in the first compiled file.
+//NTC: 05-22-2019: Just out of the fucking blue, MS Visual Studio is somehow including the SignaturePad_i.c file in the first compiled file.
 // In any case, it is complaining of multiply defined symbols from that file as being defined here and in the first file compiled, which is, at this time
 // bitmaps.cpp
-// I'll be damned if I can find out what happened to this projects settings to have caused this.
+// I'll be damned if I can find out what happened to this projects settings to have caused this, thus the #if 0 below.
 //
+//
+//NTC: 06-02-2019: Again, just out of the fucking blue, MS Visual Studio reverted this behavior and went back to the normal operation, thus changed the #if 0 to #if 1
+//
+//
+//NTC: 06-03-2019: Well, that lasted all of one fucking day. Here we go back to the same thing as on 5/22/2019, #if 1 becomes #if 0
 #if 0
 #include "SignaturePad_i.c"
 #endif

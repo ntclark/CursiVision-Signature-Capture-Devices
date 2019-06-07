@@ -57,9 +57,6 @@
 
       padBitsPerPixel(0L),
 
-      gdiplusStartupInput(NULL),
-      gdiplusToken(0),
-
       refCount(0)
 
    {

@@ -41,6 +41,21 @@
    return;
    }
 
+   void SignaturePad::OverlaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   return;
+   }
+
+   void SignaturePad::DisplaySignatureBitmapHandle(UINT_PTR hBitmap,HDC hdc,long x,long y,long cx,long cy) {
+   STDisplaySetImage(x,y,(HBITMAP)hBitmap);
+   return;
+   }
+
+   void SignaturePad::DisplaySignatureBitmapFile(char *pszImageFile,BOOL populatePad,BOOL isLastPage) {
+   OLECHAR bstrFile[MAX_PATH];
+   MultiByteToWideChar(CP_ACP,0,pszImageFile,-1,bstrFile,MAX_PATH);
+   STDisplaySetImageFromFile(0,0,bstrFile);
+   return;
+   }
 
    long SignaturePad::ShowProperties() {
    IUnknown *pIUnknown = NULL;

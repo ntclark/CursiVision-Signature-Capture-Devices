@@ -86,7 +86,9 @@ class SignaturePad : public ISignaturePad {
       long __stdcall LCDHeight();
 
       double __stdcall WidthInInches() { return padWidthInInches; };
-      double __stdcall HeightInInches() { return padWidthInInches * ((double)Height() / (double)Width()); };
+      double __stdcall HeightInInches() { 
+         return padWidthInInches * ((double)Height() / (double)Width()); 
+      };
 
       double __stdcall PadToLCDScaleX();
       double __stdcall PadToLCDScaleY();
@@ -314,8 +316,7 @@ class SignaturePad : public ISignaturePad {
         SignaturePad *pParent;
         _IConnectionPoint **connectionPoints;
 
-     } *enumConnectionPoints;
-
+     } *pIEnumConnectionPoints{NULL};
 
      struct __declspec(dllexport) _IEnumerateConnections : public IEnumConnections {
 
@@ -339,7 +340,7 @@ class SignaturePad : public ISignaturePad {
          ULONG countConnections;
          CONNECTDATA *connections;
 
-      } *enumConnections;
+      };
 
       //      IPropertyPageClient
 

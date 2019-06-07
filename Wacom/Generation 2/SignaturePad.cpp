@@ -156,10 +156,6 @@
 //NTC: 05-26-2019: Deleting the tablet causes the "render thread" in USbInterface to be stopped via
 // method stopRenderThread.
 // Which totally hangs completely and 100%
-// I do not have the desire or time to rewwrite the absolute fucking pile of shit which is the Wacom
-// STU API which they have not even remotely attempted to debug.
-// It IS the PRIME example of how sloppy unprofessionally written software is not worth the paper it
-// might be printed on - absolute fucking crap
 //
 #if 0
       delete pTablet;

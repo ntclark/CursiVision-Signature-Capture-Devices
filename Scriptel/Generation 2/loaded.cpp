@@ -58,6 +58,8 @@
 
    LCDRefresh(0,0,0,0,0);
 
+   scriptel_close_device(pDevice);
+
    return S_OK;
    }
 

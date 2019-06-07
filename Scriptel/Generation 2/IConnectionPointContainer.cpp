@@ -32,12 +32,13 @@
 
    *ppEnum = NULL;
  
-   if ( pParent -> enumConnectionPoints ) delete pParent -> enumConnectionPoints;
+   if ( pParent -> pIEnumConnectionPoints ) 
+      delete pParent -> pIEnumConnectionPoints;
  
    connectionPoints[0] = &pParent -> connectionPoint;
-   pParent -> enumConnectionPoints = new _IEnumConnectionPoints(pParent,connectionPoints,1);
+   pParent -> pIEnumConnectionPoints = new _IEnumConnectionPoints(pParent,connectionPoints,1);
  
-   return pParent -> enumConnectionPoints -> QueryInterface(IID_IEnumConnectionPoints,(void **)ppEnum);
+   return pParent -> pIEnumConnectionPoints -> QueryInterface(IID_IEnumConnectionPoints,(void **)ppEnum);
    }
  
  

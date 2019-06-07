@@ -8,6 +8,10 @@
 
    long oldTimeStamp = -1;
 
+   long ignoreOption = 0L;
+   HANDLE hMutexIgnoreOption = INVALID_HANDLE_VALUE;
+   unsigned int __stdcall resetOptions(void *);
+
    void SignaturePad::signatureActivityMonitor(long eventNumber,void *pData,long dataSize,void *pParameter) {
 
    static long lastX = -1L;
@@ -60,7 +64,22 @@
             if ( ph -> rcLocation.top > yPixels + 4 || ph -> rcLocation.bottom < yPixels - 4 )
                continue;
 
+            if ( ignoreOption )
+               return;
+
             pThis -> connectionPointContainer.fire_OptionSelected(ph -> eventId);
+
+            if ( INVALID_HANDLE_VALUE == hMutexIgnoreOption )
+               hMutexIgnoreOption = CreateMutex(NULL,FALSE,NULL);
+
+            WaitForSingleObject(hMutexIgnoreOption,INFINITE);
+
+            unsigned threadAddress;
+            (HANDLE)_beginthreadex(NULL,0,resetOptions,(void *)NULL,0L,&threadAddress);
+
+            ignoreOption = 1L;
+
+            ReleaseMutex(hMutexIgnoreOption);
 
             return;
 
@@ -81,11 +100,15 @@
    return;
    }
 
-   unsigned int __stdcall SignaturePad::fireOptionThreaded(void *pv) {
-   CoInitialize(NULL);
-   SignaturePad *pThis = reinterpret_cast<SignaturePad *>(pv);
-   pThis -> connectionPointContainer.fire_OptionSelected(pendingOptionId);
-   pendingOptionId = -1L;
-   CoUninitialize();
+   unsigned int __stdcall resetOptions(void *) {
+
+   Sleep(1000);
+
+   WaitForSingleObject(hMutexIgnoreOption,INFINITE);
+
+   ignoreOption = 0L;
+
+   ReleaseMutex(hMutexIgnoreOption);
+
    return 0;
    }

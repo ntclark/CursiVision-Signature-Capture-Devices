@@ -4,6 +4,7 @@
 
    long SignaturePad::Start() {
    Stop();
+   scriptel_open_device(pDevice);
    LCDRefresh(0,0,0,0,0);
    unsigned int threadAddr;
    hActivityMonitorThread = (HANDLE)_beginthreadex(NULL,4096,signatureActivityMonitor,(void *)this,CREATE_SUSPENDED,&threadAddr);
@@ -14,6 +15,7 @@
 
    long SignaturePad::Stop() {
    signatureActivityStopRequested = true;
+   scriptel_close_device(pDevice);
    while ( hActivityMonitorThread )
       Sleep(100);
    return S_OK;

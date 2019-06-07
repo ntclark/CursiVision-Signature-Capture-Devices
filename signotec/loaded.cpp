@@ -157,32 +157,6 @@
 
    eventsAllowed = true;
 
-   if ( gdiplusToken )
-      GdiplusShutdown(gdiplusToken);
-
-   GdiplusStartup(&gdiplusToken,&gdiplusStartupInput,NULL);
-   
-   if ( 0 == countEncoders ) {
-
-      UINT arraySize;
-
-      GetImageEncodersSize(&countEncoders,&arraySize);
-   
-      pEncoders = (ImageCodecInfo *)new BYTE[arraySize];
-   
-      GetImageEncoders(countEncoders,arraySize,pEncoders);
-      
-      for ( long k = 0; k < countEncoders; k++ ) {
-
-         if ( 0 == _wcsicmp(pEncoders[k].MimeType,L"image/bmp") ) 
-            pTheEncoder = &pEncoders[k];
-   
-         wcscpy(encoderMimeTypes[k],pEncoders[k].MimeType);
-
-      }
-
-   }
-
    return S_OK;
    }
 
@@ -207,9 +181,6 @@
 
    if ( signaturePadCount )
       STDeviceClose(0);
-
-   if ( gdiplusToken )
-      GdiplusShutdown(gdiplusToken);
 
    return S_OK;
    }

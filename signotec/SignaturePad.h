@@ -7,8 +7,8 @@
 #include <objbase.h>
 #include <list>
 #include <process.h>
-#include <gdiPlus.h>
-#include <wingdi.h>
+
+//#include <wingdi.h>
 
 #include "resource.h"
 #include "signaturePadModelIds.h"
@@ -23,8 +23,6 @@
 
 #define MODEL_ID_SIGMA 1
 #define MODEL_ID_OMEGA 2
-
-using namespace Gdiplus;
 
 struct hotSpot {
    RECT rcLocation;
@@ -66,7 +64,9 @@ class SignaturePad : public ISignaturePad {
       long __stdcall LCDHeight();
 
       double __stdcall WidthInInches() { return padWidthInInches; };
-      double __stdcall HeightInInches() { return padWidthInInches * ((double)Height() / (double)Width()); };
+      double __stdcall HeightInInches() { 
+         return padWidthInInches * ((double)Height() / (double)Width()); 
+      };
 
       double __stdcall PadToLCDScaleX();
       double __stdcall PadToLCDScaleY();
@@ -343,8 +343,6 @@ class SignaturePad : public ISignaturePad {
 
    private:
 
-      void saveBitmapFile(HDC hdcSource,HBITMAP hBitmap,long bitCount,char *pszFileName);
-
       void initializeParameters();
 
       long loaded(char *pszDeviceName,HWND hwndClientHost,void *pvICursiVisionServices);
@@ -405,9 +403,6 @@ class SignaturePad : public ISignaturePad {
       
       std::list<hotSpot *> hotSpots;
 
-      GdiplusStartupInput gdiplusStartupInput;
-      ULONG_PTR gdiplusToken;
-
       IConnectionPointContainer* pIConnectionPointContainer;
       IConnectionPoint *pIConnectionPoint;
       DWORD dwConnectionCookie;
@@ -416,7 +411,6 @@ class SignaturePad : public ISignaturePad {
 
       static LRESULT CALLBACK settingsHandler(HWND,UINT,WPARAM,LPARAM);
 
-      static unsigned int __stdcall fireOptionThreaded(void *);
       static LRESULT CALLBACK originPointHandler(HWND,UINT,WPARAM,LPARAM);
       static LRESULT CALLBACK originPointPadImageHandler(HWND,UINT,WPARAM,LPARAM);
 
@@ -436,23 +430,11 @@ class SignaturePad : public ISignaturePad {
    HINSTANCE hModule;
    BOOL eventsAllowed;
 
-   UINT countEncoders = 0L;
-   ImageCodecInfo *pEncoders = NULL;
-   OLECHAR encoderMimeTypes[32][32];
-   ULONG encoderQuality = 100L;
-   ImageCodecInfo *pTheEncoder = NULL;
-
 #else
 
    extern char szModuleName[];
    extern char szApplicationDataDirectory[];
    extern HINSTANCE hModule;
    extern BOOL eventsAllowed;
-
-   extern UINT countEncoders;
-   extern ImageCodecInfo *pEncoders;
-   extern OLECHAR encoderMimeTypes[][32];
-   extern ULONG encoderQuality;
-   extern ImageCodecInfo *pTheEncoder;
 
 #endif

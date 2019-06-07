@@ -111,7 +111,6 @@
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -126,7 +125,6 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)WacomCV.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(ProjectDir)\Wacom STU SDK\C\lib\$(Platform);$(ProjectDir)\OpenSSL\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -169,7 +167,6 @@ regsvr32 /s /c "$(TargetPath)"</Command>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -184,7 +181,6 @@ regsvr32 /s /c "$(TargetPath)"</Command>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)WacomCV.pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(ProjectDir)\Wacom STU SDK\C\lib\$(Platform);$(ProjectDir)\OpenSSL\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -238,7 +234,6 @@ regsvr32 /s /c "$(TargetPath)"</Command>
       <AdditionalDependencies>hid.lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile />
       <AdditionalLibraryDirectories>$(ProjectDir)\Wacom STU SDK\C\lib\$(Platform);$(ProjectDir)\OpenSSL\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -293,8 +288,6 @@ regsvr32 /s /c "$(TargetPath)"</Command>
       <AdditionalDependencies>hid.lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>
-      </ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(ProjectDir)\Wacom STU SDK\C\lib\$(Platform);$(ProjectDir)\OpenSSL\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>

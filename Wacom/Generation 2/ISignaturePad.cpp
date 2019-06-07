@@ -9,6 +9,8 @@
 
    pTablet -> setInkingMode(WacomGSS::STU::Protocol::InkingMode::InkingMode_On);
 
+   signatureActivityStopRequested = false;
+
    unsigned int threadAddr;
    hActivityMonitorThread = (HANDLE)_beginthreadex(NULL,4096,signatureActivityMonitor,(void *)this,CREATE_SUSPENDED,&threadAddr);
    ResumeThread(hActivityMonitorThread);

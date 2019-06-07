@@ -36,7 +36,7 @@
       GetModuleFileName(hModule,szModuleName,1024);
       memset(wstrModuleName,0,sizeof(wstrModuleName));
 
-      MultiByteToWideChar(CP_ACP, 0, szModuleName, -1, wstrModuleName, strlen(szModuleName));  
+      MultiByteToWideChar(CP_ACP, 0, szModuleName, -1, wstrModuleName, (DWORD)strlen(szModuleName));  
 
       char szTemp[MAX_PATH];
 

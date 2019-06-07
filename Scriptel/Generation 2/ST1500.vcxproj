@@ -112,7 +112,6 @@
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -128,10 +127,8 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)Scriptel.pdb</ProgramDatabaseFile>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
-      <ImportLibrary>..\Scriptel.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProjectDir)\proscript\windows\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -146,10 +143,12 @@
       <Command>
 if '$(Platform)' == 'Win32' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
 if '$(Platform)' == 'x64' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -178,7 +177,6 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -194,11 +192,9 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)Scriptel.pdb</ProgramDatabaseFile>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>..\Scriptel.lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(ProjectDir)\proscript\windows\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -212,10 +208,12 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
       <Command>
 if '$(Platform)' == 'Win32' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
-if '$(Platform)' == 'x64'  (
+if '$(Platform)' == 'x64' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -255,8 +253,6 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
       <AdditionalDependencies>libscriptel-proscript-windows-$(Platform).lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile />
-      <ImportLibrary>$(OutDir)Scriptel.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProjectDir)\proscript\windows\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -269,12 +265,14 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
-if ( '$(Platform)' == 'Win32' ) (
+if '$(Platform)' == 'Win32' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
-if ( '$(Platform)' == 'x64' ) (
+if '$(Platform)' == 'x64' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -316,9 +314,6 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
       <AdditionalDependencies>libscriptel-proscript-windows-$(Platform).lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>
-      </ProgramDatabaseFile>
-      <ImportLibrary>$(OutDir)Scriptel.lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(ProjectDir)\proscript\windows\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -330,12 +325,14 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GS
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
-if ( '$(Platform)' == 'Win32' ) (
+if '$(Platform)' == 'Win32' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
-if ( '$(Platform)' == 'x64' ) (
+if '$(Platform)' == 'x64' (
 copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
