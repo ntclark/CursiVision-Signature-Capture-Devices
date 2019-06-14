@@ -93,7 +93,7 @@
 
    if ( 0 == pageNumber ) {
       DLGTEMPLATE *dt = (DLGTEMPLATE *)LoadResource(hModule,FindResource(hModule,MAKEINTRESOURCE(IDD_PAD_PROPERTIES),RT_DIALOG));
-      pParent -> hwndSettings = CreateDialogIndirectParam(hModule,dt,(HWND)hwndParent,(DLGPROC)TabletPC::settingsHandler,(long)(void *)pParent);
+      pParent -> hwndSettings = CreateDialogIndirectParam(hModule,dt,(HWND)hwndParent,(DLGPROC)TabletPC::settingsHandler,(ULONG_PTR)(void *)pParent);
       *pHwnd = pParent -> hwndSettings;
       return S_OK;
    }
