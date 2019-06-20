@@ -22,30 +22,30 @@
     <ProjectName>signotecCV</ProjectName>
     <ProjectGuid>{B233D8FB-0F43-42EB-8FF5-40B0A7C6CC96}</ProjectGuid>
     <RootNamespace>signotec</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -55,22 +55,22 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -96,16 +96,15 @@
       <PreprocessorDefinitions>_DEBUG;_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <MkTypLibCompatible>true</MkTypLibCompatible>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
       <DefaultCharType>Ascii</DefaultCharType>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <ProxyFileName />
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(ProjectDir)STPadLib\8.4.2.2\$(Platform);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PAD=1;_CRT_NON_CONFORMING_SWPRINTFS;WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN32_WINNT=0x0501;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -122,14 +121,9 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <RegisterOutput>false</RegisterOutput>
       <AdditionalDependencies>stpadlib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention />
-      <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProjectDir)\stpadlib\8.4.2.2\$(Platform)\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -152,16 +146,14 @@
       <PreprocessorDefinitions>_DEBUG;_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <MkTypLibCompatible>true</MkTypLibCompatible>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
       <DefaultCharType>Ascii</DefaultCharType>
-      <ProxyFileName>
-      </ProxyFileName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(ProjectDir)STPadLib\8.4.2.2\$(Platform);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PAD=1;_CRT_NON_CONFORMING_SWPRINTFS;WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN32_WINNT=0x0501;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -178,14 +170,9 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <RegisterOutput>false</RegisterOutput>
       <AdditionalDependencies>stpadlib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
       <AdditionalLibraryDirectories>$(ProjectDir)\stpadlib\8.4.2.2\$(Platform)\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -216,26 +203,21 @@
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>$(ProjectDir)STPadLib\8.4.2.2\$(Platform);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PAD=1;_CRT_NON_CONFORMING_SWPRINTFS;WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile />
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MinimalRebuild />
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;PAD=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <RegisterOutput>false</RegisterOutput>
       <AdditionalDependencies>stpadlib.lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
-      <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProjectDir)\stpadlib\8.4.2.2\$(Platform)\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -267,9 +249,6 @@
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>$(ProjectDir)STPadLib\8.4.2.2\$(Platform);$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PAD=1;_CRT_NON_CONFORMING_SWPRINTFS;WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile>
       </PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
@@ -283,9 +262,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <RegisterOutput>false</RegisterOutput>
       <AdditionalDependencies>stpadlib.lib;gdiplus.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\SignaturePad.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(ProjectDir)\stpadlib\8.4.2.2\$(Platform)\;%GSYSTEM_HOME%\Common\lib\$(Configuration)\$(Platform);%GSYSTEM_HOME%\Common\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -323,10 +300,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="..\..\..\Common\source\SignaturePad.odl" />
+    <Midl Include="$(GSYSTEM_HOME)\Common\source\SignaturePad.odl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Common\include\signaturePadModelIds.h" />
+    <ClInclude Include="$(GSYSTEM_HOME)\Common\include\signaturePadModelIds.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SignaturePad.h" />
   </ItemGroup>

@@ -22,30 +22,30 @@
     <ProjectName>ScriptelCV</ProjectName>
     <ProjectGuid>{DAEFB421-97B1-4908-AE1E-D045A05797ED}</ProjectGuid>
     <RootNamespace>Scriptel ST1500</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -55,22 +55,22 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-    <Import Project="..\..\..\Common\Compiler Options.props" />
+    <Import Project="$(GSYSTEM_HOME)\Common\Compiler Options.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -104,7 +104,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>PAD=1;NOT_SCRIPTEL_EXCLUSIVE;WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN32_WINNT=0x0501;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -115,7 +116,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(ProjectDir)\proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;%GSYSTEM_HOME%\Common\include\pdfEnabler;%GSYSTEM_HOME%\Visio Logger\Common\include;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;NOT_SCRIPTEL_EXCLUSIVE;PAD=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -142,13 +143,13 @@
     <PreBuildEvent>
       <Command>
 if '$(Platform)' == 'Win32' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
 if '$(Platform)' == 'x64' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -169,7 +170,8 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>PAD=1;NOT_SCRIPTEL_EXCLUSIVE;WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN32_WINNT=0x0501;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -180,7 +182,7 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(ProjectDir)\proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;%GSYSTEM_HOME%\Common\include\pdfEnabler;%GSYSTEM_HOME%\Visio Logger\Common\include;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;NOT_SCRIPTEL_EXCLUSIVE;PAD=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -207,13 +209,13 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
     <PreBuildEvent>
       <Command>
 if '$(Platform)' == 'Win32' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
 if '$(Platform)' == 'x64' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -233,16 +235,13 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <PreprocessorDefinitions>PAD=1;NOT_SCRIPTEL_EXCLUSIVE;WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile />
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalIncludeDirectories>$(ProjectDir)\proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;%GSYSTEM_HOME%\Common\include\pdfEnabler;%GSYSTEM_HOME%\Visio Logger\Common\include;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;NOT_SCRIPTEL_EXCLUSIVE;PAD=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -266,13 +265,13 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
     <PreBuildEvent>
       <Command>
 if '$(Platform)' == 'Win32' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
 if '$(Platform)' == 'x64' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -293,9 +292,6 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <PreprocessorDefinitions>PAD=1;NOT_SCRIPTEL_EXCLUSIVE;WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeaderOutputFile>
       </PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
@@ -303,7 +299,7 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalIncludeDirectories>$(ProjectDir)\proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;%GSYSTEM_HOME%\Common\include\pdfEnabler;%GSYSTEM_HOME%\Visio Logger\Common\include;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>proscript\headers;$(ProjectDir);$(ProjectDir)include;%GSYSTEM_HOME%\Common\include;%GSYSTEM_HOME%\Common\source;$(SolutionDir);$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;NOT_SCRIPTEL_EXCLUSIVE;PAD=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -326,13 +322,13 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
     <PreBuildEvent>
       <Command>
 if '$(Platform)' == 'Win32' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )
 
 if '$(Platform)' == 'x64' (
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
-copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GSYSTEM_HOME%\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x64.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
+copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "$(GSYSTEM_HOME)\Common\Artifacts\$(Configuration)\$(Platform)\"
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -361,10 +357,10 @@ copy "$(ProjectDir)proscript\windows\libscriptel-proscript-windows-x32.dll" "%GS
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="\Common\source\SignaturePad.odl" />
+    <Midl Include="$(GSYSTEM_HOME)\Common\source\SignaturePad.odl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="\Common\include\signaturePadModelIds.h" />
+    <ClInclude Include="$(GSYSTEM_HOME)\Common\include\signaturePadModelIds.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SignaturePad.h" />
   </ItemGroup>

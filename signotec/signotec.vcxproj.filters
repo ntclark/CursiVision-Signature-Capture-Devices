@@ -66,9 +66,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="..\..\..\Common\source\SignaturePad.odl">
-      <Filter>Source Files\COM Implementation</Filter>
-    </Midl>
+    <Midl Include="$(GSYSTEM_HOME)\Common\source\SignaturePad.odl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -77,9 +75,7 @@
     <ClInclude Include="SignaturePad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Common\include\signaturePadModelIds.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="$(GSYSTEM_HOME)\Common\include\signaturePadModelIds.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SignaturePad.rc">
